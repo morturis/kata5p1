@@ -14,6 +14,9 @@ public class Kata5p1 {
         Connection cm = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\usuario\\Downloads\\SQLiteDatabaseBrowserPortable\\Data\\Kata5.db");
         Statement st = cm.createStatement();
         ResultSet rs = st.executeQuery("select name from people");
-        
+        while (rs.next()){
+            //System.out.println("ID = "+rs.getInt("id"));
+            System.out.println("Name = "+rs.getString("Name"));
+        }
     }
 }
